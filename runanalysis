@@ -1,0 +1,40 @@
+#!/bin/bash
+
+if [ $# -lt 2 ]
+then
+   echo "Error: arguments given is less than 2" 1>&2
+   exit 1
+fi
+
+if [ -f "$1" ]
+then
+   echo "Replace $1" 1>&2
+   rm "$1"
+   touch "$1"
+fi
+
+if [ ! -f "$2" ]
+then
+   echo "Error: the file does not exist" 1>&2
+   exit 1
+fi
+
+index_number=0
+
+while read -r Line
+do
+   echo "Performing wordcount measurement on $Line..."
+   page_size=$( ./measurepage "$Line" )
+
+   if [ $page_size -eq 0 ]
+   then
+      echo "...failure"
+   else
+      index_number=$((index_number+1))
+      echo "$index_number $page_size" >> "$1"
+      echo "...successful"
+   fi
+
+done < "$2"
+
+exit 0

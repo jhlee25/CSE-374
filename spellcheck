@@ -1,0 +1,56 @@
+#!/bin/bash
+
+
+if [ $# -eq 0 ]
+   then
+   echo "Usage: spellcheck filename ..." 1>&2
+   exit 1
+fi
+
+
+while [ $# -gt 0 ]; do
+
+   if [ ! -f $1 ]; then
+      echo "$1 doesn't exist so skipping" 1>&2
+      shift
+      continue
+
+   else  
+      if [ ! -f $1.spelling ]; then
+         touch $1.spelling
+         echo "creating $1.spelling"
+      else
+         rm $1.spelling
+         touch $1.spelling      
+         echo "replacing $1.spelling"
+      fi
+
+      while read -ra line;
+      do
+        for word in "${line[@]}";
+        do
+            if ! grep -i -q "^$word$" /usr/share/dict/words
+            then
+               echo "$word" >> "$1.spelling"
+            fi
+         done
+      done < "$1"    
+
+      if [ ! -s "$1.spelling" ]
+      then
+         rm $1.spelling
+         echo "found 0 spelling eroors, 0 of them are unique"
+      else 
+         num=$( wc -l <$1.spelling )
+         uniquenum=$( sort -u $1.spelling| wc -l )
+         echo "found $num spelling errors, $uniquenum of them are unique"
+      fi
+   fi
+
+   echo "$1 completed" 1>&2
+   shift
+
+done
+
+exit 0
+

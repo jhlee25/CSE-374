@@ -1,0 +1,118 @@
+Script started on 2023-01-17 17:11:01-08:00 [TERM="xterm-256color" TTY="/dev/pts/56" COLUMNS="120" LINES="30"]
+[?2004h[jhlee25@cancun ~]$ echo "Hello world"
+[?2004l
+Hello world
+[?2004h[jhlee25@cancun ~]$ date
+[?2004l
+Tue Jan 17 05:11:12 PM PST 2023
+[?2004h[jhlee25@cancun ~]$ cal
+[?2004l
+    January 2023    
+Su Mo Tu We Th Fr Sa
+ 1  2  3  4  5  6  7
+ 8  9 10 11 12 13 14
+15 16 [7m17[27m 18 19 20 21
+22 23 24 25 26 27 28
+29 30 31            
+                    
+[?2004h[jhlee25@cancun ~]$ echo ~
+[?2004l
+/data/netid/jhlee25
+[?2004h[jhlee25@cancun ~]$ pwd
+[?2004l
+/data/netid/jhlee25
+[?2004h[jhlee25@cancun ~]$ ls
+[?2004l
+[0m[01;32mex1.sh[0m  example  hw0.script  hw1.part1  MyFirstScript.sh  [01;34mmyFolder[0m  [01;34mudrive[0m
+[?2004h[jhlee25@cancun ~]$ mkdir temp
+[?2004l
+[?2004h[jhlee25@cancun ~]$ mv temp files
+[?2004l
+[?2004h[jhlee25@cancun ~]$ cd files
+[?2004l
+[?2004h[jhlee25@cancun files]$ date > now
+[?2004l
+[?2004h[jhlee25@cancun files]$ cp now before
+[?2004l
+[?2004h[jhlee25@cancun files]$ echo "xyzzy" > secret
+[?2004l
+[?2004h[jhlee25@cancun files]$ ls -l
+[?2004l
+total 12
+-rw-r--r-- 1 jhlee25 netid 32 Jan 17 17:12 before
+-rw-r--r-- 1 jhlee25 netid 32 Jan 17 17:12 now
+-rw-r--r-- 1 jhlee25 netid  6 Jan 17 17:13 secret
+[?2004h[jhlee25@cancun files]$ mv secret magic
+[?2004l
+[?2004h[jhlee25@cancun files]$ cd ..
+[?2004l
+[?2004h[jhlee25@cancun ~]$ re[Km - [Kr files
+[?2004l
+[?2004h[jhlee25@cancun ~]$ echo "It's a secret!" > secretfile
+[?2004l
+bash: secretfile: Permission denied
+[?2004h[jhlee25@cancun ~]$ chmod a-w secretfile 
+[?2004l
+[?2004h[jhlee25@cancun ~]$ ls -l
+[?2004l
+total 28
+-rwxrwxrwx 1 jhlee25 netid   11 Jan  6 17:06 [0m[01;32mex1.sh[0m
+-rw-r--r-- 1 jhlee25 netid   17 Jan 15 15:35 example
+-rw-r--r-- 1 jhlee25 netid 1074 Jan  9 11:50 hw0.script
+-rw-r--r-- 1 jhlee25 netid 5192 Jan 17 17:22 hw1.part1
+-rw-r--r-- 1 jhlee25 netid    0 Jan 17 17:24 hw1.part1.edit
+-rw-r--r-- 1 jhlee25 netid   80 Jan 15 15:39 MyFirstScript.sh
+drwxr-xr-x 2 jhlee25 netid   10 Jan  6 17:12 [01;34mmyFolder[0m
+---------- 1 jhlee25 netid   15 Jan 17 17:14 secretfile
+drwx------ 2 jhlee25 netid    0 May 13  2022 [01;34mudrive[0m
+[?2004h[jhlee25@cancun ~]$ car[Kt > secretfile 
+[?2004l
+bash: secretfile: Permission denied
+[?2004h[jhlee25@cancun ~]$ chmod a-r secretfile 
+[?2004l
+[?2004h[jhlee25@cancun ~]$ ls -l
+[?2004l
+total 28
+-rwxrwxrwx 1 jhlee25 netid   11 Jan  6 17:06 [0m[01;32mex1.sh[0m
+-rw-r--r-- 1 jhlee25 netid   17 Jan 15 15:35 example
+-rw-r--r-- 1 jhlee25 netid 1074 Jan  9 11:50 hw0.script
+-rw-r--r-- 1 jhlee25 netid 5192 Jan 17 17:22 hw1.part1
+-rw-r--r-- 1 jhlee25 netid    0 Jan 17 17:24 hw1.part1.edit
+-rw-r--r-- 1 jhlee25 netid   80 Jan 15 15:39 MyFirstScript.sh
+drwxr-xr-x 2 jhlee25 netid   10 Jan  6 17:12 [01;34mmyFolder[0m
+---------- 1 jhlee25 netid   15 Jan 17 17:14 secretfile
+drwx------ 2 jhlee25 netid    0 May 13  2022 [01;34mudrive[0m
+[?2004h[jhlee25@cancun ~]$ cat [K secretfile 
+[?2004l
+cat: secretfile: Permission denied
+[?2004h[jhlee25@cancun ~]$ hostname
+[?2004l
+cancun.cs.washington.edu
+[?2004h[jhlee25@cancun ~]$ ps -us[Kx
+[?2004l
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+jhlee25   251694  0.0  0.0  20512 11748 ?        Ss   17:07   0:00 /usr/lib/systemd/systemd --user
+jhlee25   251695  0.0  0.0 211900  8944 ?        S    17:07   0:00 (sd-pam)
+jhlee25   251703  0.0  0.0  47584  8032 ?        S    17:07   0:00 sshd: jhlee25@notty
+jhlee25   251704  0.0  0.0   7384  3800 ?        Ss   17:07   0:00 bash
+jhlee25   251770  0.0  0.0   7120  3404 ?        S    17:07   0:00 sh /data/netid/jhlee25/.vscode-server/bin/e8a3071ea43
+jhlee25   251780  1.2  0.0 937176 78424 ?        Sl   17:07   0:05 /data/netid/jhlee25/.vscode-server/bin/e8a3071ea4344d
+jhlee25   251823  0.0  0.0 693956 49600 ?        Sl   17:07   0:00 /data/netid/jhlee25/.vscode-server/bin/e8a3071ea4344d
+jhlee25   252003  0.0  0.0  47048  7552 ?        S    17:07   0:00 sshd: jhlee25@notty
+jhlee25   252004  0.0  0.0   7384  3880 ?        Ss   17:07   0:00 bash
+jhlee25   252078  0.7  0.0 824628 87864 ?        Sl   17:07   0:03 /data/netid/jhlee25/.vscode-server/bin/e8a3071ea4344d
+jhlee25   252089  0.1  0.0 835404 46820 ?        Sl   17:07   0:00 /data/netid/jhlee25/.vscode-server/bin/e8a3071ea4344d
+jhlee25   254225  0.0  0.0  47048  7448 ?        S    17:10   0:00 sshd: jhlee25@pts/56
+jhlee25   254226  0.0  0.0  16480  4332 pts/56   Ss   17:10   0:00 -bash
+jhlee25   254457  0.0  0.0   5620  1112 pts/56   S+   17:11   0:00 script hw1.part1
+jhlee25   254459  0.0  0.0  16608  4544 pts/88   Ss   17:11   0:00 bash -i
+jhlee25   255561  0.0  0.0   5584   996 ?        S    17:13   0:00 sleep 180
+jhlee25   255936  0.0  0.0   5584  1036 ?        S    17:13   0:00 sleep 180
+jhlee25   256725  0.0  0.0  27084  6440 pts/88   R+   17:15   0:00 ps -ux
+[?2004h[jhlee25@cancun ~]$ grep jhlee25 /etc/passwd
+[?2004l
+[?2004h[jhlee25@cancun ~]$ exit
+[?2004l
+exit
+
+Script done on 2023-01-17 17:15:41-08:00 [COMMAND_EXIT_CODE="1"]

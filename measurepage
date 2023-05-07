@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [ $# -lt 1 ]
+then
+   echo "Error: no arguments" 1>&2
+   exit 1
+fi
+
+wget -O temp_file -q "$1" >& /dev/null
+
+if [ ! -s temp_file ]
+  then
+  echo "0"  
+
+else
+  ./wordcount -w temp_file
+fi
+
+rm temp_file
+
+exit 0
